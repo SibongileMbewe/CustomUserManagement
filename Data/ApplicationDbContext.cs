@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using CustomUserManagement.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,7 +19,7 @@ namespace CustomUserManagement.Data
         {
             base.OnModelCreating(builder);
             builder.HasDefaultSchema("Identity");
-            builder.Entity<IdentityUser>(entity =>
+            builder.Entity<ApplicationUser>(entity =>
             {
                 entity.ToTable(name: "User");
             });
